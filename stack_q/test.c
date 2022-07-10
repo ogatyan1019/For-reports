@@ -1,0 +1,10 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(int argc, char *argv){
+    int a, b, sum;
+    char A[];
+    A[0] = argv[1];
+    printf("%c", A[0]);
+    return 0;
+}
