@@ -16,6 +16,27 @@ void setQueue(){
     }
 }
 
+int enqueue(int enqNum){
+    if(queueNum >= SIZE)
+        return(0);
+    
+    else 
+        if(queueNum>=1){
+            for(int i=queueNum; i>=0; i--){
+                charBuff = queue[i];
+                queue[i+1] = charBuff;
+            }
+        }
+        charBuff = Data[dataNum];
+        queue[0] = charBuff;
+        dataNum++;
+        queueNum++;
+}
+
+int dequeue(int *deqNum){
+    queueNum++;
+}
+
 
 void queuePrint(){
     int i;
