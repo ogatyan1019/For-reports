@@ -34,15 +34,15 @@ int enqueue(int enqNum){
 }
 
 int dequeue(int *deqNum){
-    queueNum++;
+    queueNum--;
 }
 
 
 void queuePrint(){
     int i;
-    printf("queue[ ");
+    printf("queue[");
     for(i=0; i<queueNum; i++)
-        printf(" %c",queue[i]);
+        printf("%c ",queue[i]);
     printf("]\n");
 }
 
