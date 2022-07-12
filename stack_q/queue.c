@@ -57,19 +57,16 @@ void queuePrint(){
 
 int main(int argc, char *argv[]){
     int buffNum=1;
-    //printf("queueNum=%d\n",queueNum);
     setQueue();
     for(;;){
         if(*argv[buffNum] != 'Q'){
 
             if(*argv[buffNum] == 'E'){
                 enqueue(buffNum);
-                //queuePrint();
             }
         
             if(*argv[buffNum] == 'D'){
                 dequeue(&buffNum);
-                //queuePrint();
             }
         buffNum++;
         }
