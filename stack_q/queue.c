@@ -17,12 +17,15 @@ void setQueue(){
 }
 
 int enqueue(int enqNum){
-    if(queueNum >= SIZE)
-        return(0);
+    if(queueNum >= SIZE){
+        printf("queueNum=%d\n",queueNum);
+        queuePrint();
+        exit(1);
+    }
     
-    else 
+    else{
         if(queueNum>=1){
-            for(int i=queueNum; i>=0; i--){
+            for(int i=queueNum-1; i>=0; i--){
                 charBuff = queue[i];
                 queue[i+1] = charBuff;
             }
@@ -31,33 +34,39 @@ int enqueue(int enqNum){
         queue[0] = charBuff;
         dataNum++;
         queueNum++;
+        printf("queueNum=%d\n",queueNum);
+    }
 }
 
 int dequeue(int *deqNum){
     queueNum--;
+    printf("queueNum=%d\n",queueNum);
 }
 
 
 void queuePrint(){
     int i;
     printf("queue[");
-    for(i=0; i<queueNum; i++)
+    for(i=0; i<=queueNum; i++)
         printf("%c ",queue[i]);
     printf("]\n");
 }
 
 int main(int argc, char *argv[]){
     int buffNum=1;
+    printf("queueNum=%d\n",queueNum);
     setQueue();
     for(;;){
         if(*argv[buffNum] != 'Q'){
 
             if(*argv[buffNum] == 'E'){
                 enqueue(buffNum);
+                queuePrint();
             }
         
             if(*argv[buffNum] == 'D'){
                 dequeue(&buffNum);
+                queuePrint();
             }
         buffNum++;
         }
