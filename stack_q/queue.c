@@ -18,8 +18,7 @@ void setQueue(){
 
 int enqueue(int enqNum){
     if(queueNum >= SIZE){
-        //printf("queueNum=%d\n",queueNum);
-        queuePrint();
+        printf("Queue Over Flow\n");
         exit(1);
     }
     
@@ -34,13 +33,17 @@ int enqueue(int enqNum){
         queue[0] = charBuff;
         dataNum++;
         queueNum++;
-        //printf("queueNum=%d\n",queueNum);
     }
 }
 
 int dequeue(int *deqNum){
-    queueNum--;
-    //printf("queueNum=%d\n",queueNum);
+    if(queueNum!=0)
+        queueNum--;
+    
+    else{
+        printf("Queue Under Flow");
+        exit(1);
+    }
 }
 
 
